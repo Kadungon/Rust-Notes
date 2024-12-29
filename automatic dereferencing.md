@@ -19,24 +19,8 @@ Here, the `to_string()` method is implemented for `i32`, not `&&i32`. Rust deref
 
 ---
 
-#### 2. **Trait Implementations**
-When passing a value to a function or operator that requires a specific type, Rust applies deref coercion to match the expected type.
 
-```rust
-fn add_one(x: i32) -> i32 {
-    x + 1
-}
-
-let v = &5;
-add_one(*v);      // Explicit dereference
-add_one(v);       // Automatic dereference
-```
-
-Rust dereferences `v` automatically because `add_one` expects an `i32`.
-
----
-
-#### 3. **Operators**
+#### 2. **Operators**
 For operators like `+`, `-`, `*`, Rust will dereference references to match the type required by the operator's implementation.
 
 ```rust
@@ -46,7 +30,7 @@ let result = v + 20; // Rust dereferences `v` automatically to perform addition
 
 ---
 
-#### 4. **Pattern Matching**
+#### 3. **Pattern Matching**
 When matching references in patterns, Rust dereferences them to make working with the underlying data easier.
 
 ```rust
