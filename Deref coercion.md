@@ -135,6 +135,13 @@ fn main() {
 
 ---
 
+### **Key Rules for Deref Coercion**
+- Works in method calls, function arguments, operator overloading, indexing, and pattern matching.
+- Does not work in generics or ambiguous cases.
+- Deref coercion is based on the **Deref** and **DerefMut** traits. You can implement these traits for custom types to enable coercion.
+  
+---
+
 ### **Key Takeaways**
 
 - **Deref Coercion** simplifies the use of smart pointers by allowing them to act like regular references in function arguments and method calls.
